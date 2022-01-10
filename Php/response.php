@@ -1,8 +1,6 @@
 <?php
 include "connection.php";
 
-
-
 if(isset($_POST['name'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
 
@@ -23,7 +21,7 @@ if(isset($_GET['name'])){
     if ($result->num_rows > 0) {
 
         while($row = $result->fetch_assoc()) {
-            echo $row;
+            echo $row['varosnev'] . ';';
         }
 
     }else {

@@ -4,11 +4,27 @@
     padding: 16px;
     font-size: 16px;
     border: none;
+    margin-right: 30px;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
+}
+
+#result {
+    display: block;
+    position: relative;
+    left: 350px;
+}
+
+#form {
+    display: inline-block;
+}
+
+.h {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .dropdown-content {
@@ -18,11 +34,13 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin-left: 120px;
 }
 
-.dropdown-content input {
+.dropdown-content button {
+    font-size: small;
     color: black;
-    padding: 12px 16px;
+    padding: 2px;
     text-decoration: none;
     display: block;
 }

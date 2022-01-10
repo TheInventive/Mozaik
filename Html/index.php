@@ -7,9 +7,10 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
+<form id="form" action="">
     <div class="dropdown">
-        <button class="dropbtn" >Válasszon!</button>
+        <h1 class="h">Megye:</h1>
+        <button class="dropbtn" id="choice">Válasszon!</button>
         <div class="dropdown-content">
 
             <?php
@@ -42,41 +43,35 @@
                 ?>
 
                 function getName(e){
+                    document.getElementById('choice').innerText = e.target.innerText;
+                    document.getElementById('megye').innerText = e.target.innerText;
                     e.preventDefault();
 
                     var xhr = new XMLHttpRequest();
-                    console.log(this.value);
-                    xhr.open('GET', 'connection.php?name='+this.value, true);
+                    console.log(e.target.id);
+                    xhr.open('GET', '../Php/response.php?name='+e.target.id, true);
 
                     xhr.onload = function(){
                         console.log(this.responseText);
+                        let elements = this.responseText.slice(0, -1).split(';');
+                        let output = '';
+
+                        for (const i in elements) {
+                            output += '<ul>' +
+                                '<li>'+elements[i]+'</li>' +
+                                '</ul>';
+                        }
+                        document.getElementById("result").innerHTML = output;
                     }
 
                     xhr.send();
                 }
-
-
-                function postName(e){
-                    e.preventDefault();
-
-                    var name = document.getElementById('name2').value;
-                    var params = "name="+name;
-
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'process.php', true);
-                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-                    xhr.onload = function(){
-                        console.log(this.responseText);
-                    }
-
-                    xhr.send(params);
-                }
             </script>
         </div>
     </div>
-    <div id="table">
-
+    <h1 class="h">Megye:</h1>
+    <h1 class="h" id="megye"></h1>
+    <div id="result">
     </div>
 </form>
 </body>
