@@ -36,7 +36,7 @@
 
                 ?>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <script src="../Js/2.js"></script>
+                <script src="../Js/EditableText.js"></script>
                 <script src="../Js/GetName.js"></script>
                 <script>
                     <?php
@@ -52,6 +52,14 @@
             <div id="result"></div>
         </div>
     </div>
+    <div class="flex-container">
+        <h1>Új város</h1>
+        <form id="post-form">
+            <input id="name2" type="text">
+            <button type="submit">Felvesz</button>
+        </form>
+    </div>
+    <script src="../Js/PostName.js"></script>
 </form>
 </body>
 </html>

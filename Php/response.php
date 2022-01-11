@@ -3,8 +3,9 @@ include "connection.php";
 
 if(isset($_POST['name'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
-
-    $query = "INSERT INTO users(name) VALUES('$name')";
+    $county = mysqli_real_escape_string($conn, $_POST['county']);
+    echo 'The county is' .$county;
+    $query = "INSERT INTO mozaik.varosok(varosnev,megyeid) VALUES('$name','$county')";
 
     if(mysqli_query($conn, $query)){
         echo 'User Added...';
@@ -24,8 +25,6 @@ if(isset($_GET['name'])){
             echo $row['varosnev'] . ';';
         }
 
-    }else {
-        echo "Hiba!";
     }
     $conn->close();
 }
