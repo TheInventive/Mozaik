@@ -34,45 +34,20 @@
             $conn->close();
 
             ?>
-
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="../Js/2.js"></script>
+            <script src="../Js/GetName.js"></script>
             <script>
                 <?php
                     for($j = 1; $j < $i; $j++){
                         echo 'document.getElementById(\''.($j).'\').addEventListener(\'click\', getName);';
-                    }
-                ?>
-
-                function getName(e){
-                    document.getElementById('choice').innerText = e.target.innerText;
-                    document.getElementById('megye').innerText = e.target.innerText;
-                    e.preventDefault();
-
-                    var xhr = new XMLHttpRequest();
-                    console.log(e.target.id);
-                    xhr.open('GET', '../Php/response.php?name='+e.target.id, true);
-
-                    xhr.onload = function(){
-                        console.log(this.responseText);
-                        let elements = this.responseText.slice(0, -1).split(';');
-                        let output = '';
-
-                        for (const i in elements) {
-                            output += '<ul>' +
-                                '<li>'+elements[i]+'</li>' +
-                                '</ul>';
-                        }
-                        document.getElementById("result").innerHTML = output;
-                    }
-
-                    xhr.send();
-                }
+                    }?>
             </script>
         </div>
     </div>
     <h1 class="h">Megye:</h1>
     <h1 class="h" id="megye"></h1>
-    <div id="result">
-    </div>
+    <div id="result"></div>
 </form>
 </body>
 </html>
