@@ -15,8 +15,11 @@ function getName(e){
         let output = '';
 
         for (const i in elements) {
-            output += '<ul>' +
-                '<li data-editable>'+elements[i]+'</li>' +
+            output += '<ul class="flex-container">' +
+                '<li class="flex-container"><li data-editable>'+elements[i]+'</li><button onclick="">Tötlés</button>' +
+                '<button>Módosítás</button>' +
+                '<button>Mégsem</button>' +
+                '</li>' +
                 '</ul>';
         }
         document.getElementById("result").innerHTML = output;

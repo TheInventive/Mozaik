@@ -2,7 +2,11 @@ document.getElementById('post-form').addEventListener('submit', postName);
 function postName(e){
     e.preventDefault();
 
-    console.log("Current county is: "+currentCounty);
+    if(currentCounty == null){
+        alert("Válasszon megyét!");
+        return;
+    }
+
     const name = document.getElementById('name2').value;
     const params = "name=" + name + "&county=" + currentCounty;
 

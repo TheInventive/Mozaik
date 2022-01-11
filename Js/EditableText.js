@@ -6,7 +6,8 @@ $('body').on('click', '[data-editable]', function(){
     $el.replaceWith( $input );
 
     const save = function () {
-        const $p = $('<p data-editable />').text($input.val());
+        const $p = $('<li data-editable />').text($input.val());
+        console.log($input.val());
         $input.replaceWith($p);
     };
     $input.one('blur', save).focus();
