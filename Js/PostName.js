@@ -11,7 +11,7 @@ function postName(e){
     const params = "name=" + name + "&county=" + currentCounty;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../Php/response.php', true);
+    xhr.open('POST', 'Php/response.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function(){

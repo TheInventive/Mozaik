@@ -13,7 +13,6 @@
         <div class="dropdown">
             <button class="dropbtn" id="choice" disabled>Válasszon!</button>
             <div class="dropdown-content">
-
                 <?php
                 include "Php/connection.php";
                 $sql = "select * from u448975089_mozaik.megyek;";

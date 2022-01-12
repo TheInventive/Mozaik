@@ -7,7 +7,7 @@ function getName(e){
 
     const xhr = new XMLHttpRequest();
     console.log(e.target.id);
-    xhr.open('GET', '../Php/response.php?name='+e.target.id, true);
+    xhr.open('GET', 'Php/response.php?name='+e.target.id, true);
     currentCounty = e.target.id;
     xhr.onload = function(){
         console.log(this.responseText);
