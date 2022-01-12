@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="Html/dropdown.css">
     <title>Title</title>
 </head>
 <body>
@@ -15,8 +15,8 @@
             <div class="dropdown-content">
 
                 <?php
-                include "../Php/connection.php";
-                $sql = "select * from mozaik.megyek;";
+                include "Php/connection.php";
+                $sql = "select * from u448975089_mozaik.megyek;";
 
                 $result = $conn->query($sql);
 
@@ -36,8 +36,8 @@
 
                 ?>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <script src="../Js/EditableText.js"></script>
-                <script src="../Js/GetName.js"></script>
+                <script src="Js/EditableText.js"></script>
+                <script src="Js/GetName.js"></script>
                 <script>
                     <?php
                     for($j = 1; $j < $i; $j++){
@@ -59,7 +59,7 @@
             <button type="submit">Felvesz</button>
         </form>
     </div>
-    <script src="../Js/PostName.js"></script>
+    <script src="Js/PostName.js"></script>
 </form>
 </body>
 </html>

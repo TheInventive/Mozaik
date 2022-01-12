@@ -16,14 +16,15 @@ function getName(e){
 
         for (const i in elements) {
             output += '<ul class="flex-container">' +
-                '<li class="flex-container"><li data-editable>'+elements[i]+'</li><button onclick="">Tötlés</button>' +
+                '<li class="flex-container"><li data-editable>'+elements[i]+'</li><template><button onclick="">Tötlés</button>' +
                 '<button>Módosítás</button>' +
-                '<button>Mégsem</button>' +
+                '<button>Mégsem</button></template>' +
                 '</li>' +
                 '</ul>';
         }
         document.getElementById("result").innerHTML = output;
     }
+    eval("var i = 0;");
 
     xhr.send();
 }
